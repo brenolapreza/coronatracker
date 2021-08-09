@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const HeaderMain = styled.div`
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+`
+
 export const HeaderStyle = styled.header`
     display: flex;
     align-items: center;
@@ -7,7 +12,6 @@ export const HeaderStyle = styled.header`
     width: 100%;
     height:75px;
     padding: 30px;
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
 
     img{
     width: 60px;
@@ -17,6 +21,8 @@ export const HeaderStyle = styled.header`
 //MOBILE HEADER
 @media(max-width:786px){
     padding: 0px;
+    position: relative;
+    top: 0;
     ul {
         visibility: ${({ btnActive }) => btnActive ? 'hidden' : 'visible'};
         opacity: ${({ btnActive }) => btnActive ? '0' : '1'};
@@ -30,6 +36,7 @@ export const HeaderStyle = styled.header`
         width: 2rem;
         transition: 0.3s;
         border-radius: 3px;
+        z-index:999999;
     }
 
     .line-one{
@@ -73,10 +80,12 @@ export const ListHeader = styled.ul`
 
     @media(max-width:786px){
         flex-direction: column;
-        position: absolute;
+        justify-content: center;
+        position: fixed;
         align-items: center;
-        top: 75px;
-        height: 80vh;
+        top: 0;
+        right: 0;
+        height: 100vh;
         background-color: #f0f0f0ee;
         margin: 0 auto;
         box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
@@ -94,7 +103,7 @@ export const ListHeader = styled.ul`
 export const ButtonHamburger = styled.div`
     width: 2rem;
     height: 2rem;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
