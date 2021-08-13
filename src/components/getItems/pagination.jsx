@@ -9,7 +9,7 @@ export default function Pagination({ postsPerPage, totalPosts, paginate }){
         <nav>
             <ul>
                 {pageNumbers.map(function(item){
-                    return <a onClick={() => paginate(item)} href="/listar/"><li>{item}</li></a>
+                    return <a onClick={() => paginate(item)} href="/listar/#"><li>{item}</li></a>
                 })}
             </ul>
         </nav>
