@@ -19,7 +19,7 @@ export const HeaderStyle = styled.header`
 }
 
 //MOBILE HEADER
-@media(max-width:786px){
+@media(max-width:850px){
     padding: 0px;
     position: relative;
     top: 0;
@@ -78,7 +78,7 @@ export const ListHeader = styled.ul`
         text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.315);
     }
 
-    @media(max-width:786px){
+    @media(max-width:850px){
         flex-direction: column;
         justify-content: center;
         position: fixed;

@@ -7,32 +7,42 @@ export const Section = styled.section`
     min-height: calc(100vh - 75px);
 
     h1{
-        font-size:58px;
+        font-size:78px;
         line-height: 1.1;
+        font-weight: 900;
     }
     p{
         font-size:25px;
-        line-height: 1.1;
+        line-height: 1.4;
         padding: 15px 0;
     }
 
-    @media(max-width:786px){
-        grid-template-columns: 1fr;
+    @media(max-width:850px){
+        display: flex;
         justify-content: center;
-        padding: 50px 0;
+        flex-wrap: wrap;
 
-        h1{
+        padding: 50px 0;
+        align-content: center;
+
+        h1:nth-child(1){
+            font-size: 78px;
+
+        }
+        h1:nth-child(2){
             font-size: 48px;
+
         }
         p{
             font-size:18px;
+
         }
     }
 `
 
 export const SectionMain = styled.div`
 
-    @media(max-width:786px){
+    @media(max-width:850px){
         padding: 20px 0;
 
     }
