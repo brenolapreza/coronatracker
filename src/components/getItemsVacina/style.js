@@ -17,8 +17,8 @@ export const ContainerList = styled.div`
     }
    
    @media (max-width:786px){
-        grid-template-columns: 1fr 1fr;
-        gap: 2px;
+        grid-template-columns: 1fr;
+        gap: 5px;
     }
 `
 export const ListaValores = styled.ul`
@@ -40,18 +40,6 @@ export const ListaValores = styled.ul`
         margin: 2px;
         padding: 2px;
     }
-
-    @media (max-width:900px){
-        width: 170px;
-        height: 220px;
-        margin: 5px;
-        align-items: flex-start;
-
-        li{
-            font-size: 13px;
-        }
-    }
-
 `
 export const CirularWrapper = styled.div`
     display: flex;

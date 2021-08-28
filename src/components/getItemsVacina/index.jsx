@@ -1,6 +1,6 @@
 import React from 'react';
 import Items from './items'
-import Api from '../../api/api'
+import ApiVacina from '../../api/apiVacina'
 import Pagination from './pagination'
 
 /* IMPORT COMPONENT STYLE */
@@ -10,17 +10,17 @@ import {CirularWrapper} from './style'
 import { CircularProgress } from '@material-ui/core';
 
 
-export default function GetItems() {
-    const [currentPage, setCurrentPage] = React.useState(1);
-    const [item, setItem] = React.useState([])
-    const postsPerPage = 30
+export default function GetItemsVacina() {
+    // const [currentPage, setCurrentPage] = React.useState(1);
+    const [item, setItem] = React.useState({})
+    // const postsPerPage = 30
 
     const [loading, setLoading] = React.useState(true);
 
     /* FUNÇÃO ASYNC PARA FETCH DOS DADOS UTILIZANDO O AXIOS */
     async function fetchCountries() {
         setLoading(true)
-        await Api.get(`countries`).then(res => {
+        await ApiVacina.get().then(res => {
             const item = res.data
             setItem(item)
         })
@@ -33,11 +33,11 @@ export default function GetItems() {
     }, [])
 
     /* VARIAVEIS PARA PAGINAÇÃO */
-    const indexOfLastPost = currentPage * postsPerPage
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = item.slice(indexOfFirstPost, indexOfLastPost);
+    // const indexOfLastPost = currentPage * postsPerPage
+    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    // const currentPosts = item.slice(indexOfFirstPost, indexOfLastPost);
 
-    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+    // const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     return (
         <>
@@ -50,8 +50,8 @@ export default function GetItems() {
             }
             { /* COMPONENTE DE ITEMS E PAGINAÇÃO */}
 
-            <Items item={currentPosts} />
-            <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} />
+            <Items item={item}/>
+            {/* <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} /> */}
 
         </>
     )

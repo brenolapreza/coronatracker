@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CoronaLogo from '../../styles/images/corona-icon1.png'
 
@@ -22,7 +22,7 @@ export default function Header() {
                 <ListHeader>
                     <li><Link to="/">HOME</Link></li>
                     <li><Link to="/listar">TODOS OS PAÍSES</Link></li>
-                    <li><Link to="/">VACINAS</Link></li>
+                    <li><Link to="/vacinas">VACINAS</Link></li>
                     <li><Link to="/">SOBRE O COVID-19</Link></li>
                 </ListHeader>
             </HeaderStyle>
