@@ -8,24 +8,6 @@ export default function Header() {
 
     const [btnActive, setBtnActive] = useState(true)
 
-    const [show, setShow] = useState(true)
-    const controlNavBar = () => {
-        if (window.scrollY > 300) {
-            setShow(false)
-        }
-        else {
-            setShow(true)
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', controlNavBar)
-        return () => {
-            window.removeEventListener('scroll', controlNavBar)
-        }
-    })
-
-
     return (
         <HeaderMain>
             <HeaderStyle className="container" btnActive={btnActive}>

@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, p{
 }
 
 .container{
-  max-width: 80%;
+  max-width: 1140px;
   margin: 0 auto;
 }
 `

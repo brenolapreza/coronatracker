@@ -7,12 +7,12 @@ export const Section = styled.section`
     min-height: calc(100vh - 75px);
 
     h1{
-        font-size:78px;
+        font-size: 58px;
         line-height: 1.1;
         font-weight: 900;
     }
     p{
-        font-size:25px;
+        font-size: 19px;
         line-height: 1.4;
         padding: 15px 0;
     }
@@ -26,11 +26,11 @@ export const Section = styled.section`
         align-content: center;
 
         h1:nth-child(1){
-            font-size: 78px;
+            font-size: 68px;
 
         }
         h1:nth-child(2){
-            font-size: 48px;
+            font-size: 38px;
 
         }
         p{

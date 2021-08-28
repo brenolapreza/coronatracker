@@ -1,7 +1,6 @@
 import React from 'react'
 import  Button  from "../../components/button";
 import Header from "../../components/Header";
-import { gsap,Sine } from 'gsap';
 
 import {Section, SectionMain} from './style'
 

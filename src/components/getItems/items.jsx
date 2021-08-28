@@ -10,7 +10,7 @@ export default function Items({ item }){
                 <ContainerList>
                     {item.map((valor, index) => {
                         return <ListaValores key={index}>
-                            <li><h2>{valor.country}</h2></li>
+                            <li><h3>{valor.country}</h3></li>
                             <li>Casos: {valor.cases}</li>
                             <li>Casos hoje: {valor.todayCases}</li>
                             <li>Mortes: {valor.deaths}</li>
