@@ -45,7 +45,7 @@ export default function GetItems() {
 
             {loading &&
                 <CirularWrapper>
-                    <CircularProgress color="black" thickness={6} size={50}/>
+                    <CircularProgress color="primary" thickness={6} size={50}/>
                 </CirularWrapper>
             }
             { /* COMPONENTE DE ITEMS E PAGINAÇÃO */}
