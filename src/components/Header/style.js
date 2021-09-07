@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const HeaderMain = styled.div`
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
-    background-color: #fff;
+    background-color: rgba(100,100,100,0.1);
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    position: relative; 
 `
 
 export const HeaderStyle = styled.header`
@@ -12,7 +15,7 @@ export const HeaderStyle = styled.header`
     max-width: 1320px;
     height:75px;
     padding: 30px;
-
+    
     img{
     width: 60px;
     padding: 3px;
