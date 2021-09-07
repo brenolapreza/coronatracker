@@ -22,7 +22,9 @@ body {
 h1, h2, h3, h4, h5, p{
   color: var(--new-black);
 }
-
+.btn-sucess{
+        background-color: var(--main-color);
+    }
 .container{
   max-width: 1140px;
   margin: 0 auto;

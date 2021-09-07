@@ -11,19 +11,22 @@ export const UlPagination = styled.ul`
     flex-direction: row;
     list-style: none;
     flex-wrap: wrap;
+`
+export const ButtonListed = styled.a`
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 24px -5px rgba(0,0,0,0.26);
+    text-decoration:none;
+    transition: .5s;
+    color: var(--new-black);
 
-    a {
-        padding: 8px 15px;
-        margin: 10px;
-        background-color: #fff;
-        border-radius: 4px;
-        box-shadow: 0px 0px 24px -5px rgba(0,0,0,0.26);
-        text-decoration:none;
-        transition: .5s;
-        color: var(--new-black);
 
-        &:hover{
-            background-color: var(--main-color);
-        }
+    &:hover{
+        background-color: var(--main-color);
     }
+`
+
+export const DivButtonList = styled.div`
+       padding: 8px 15px;
+
 `

@@ -13,7 +13,7 @@ import { CircularProgress } from '@material-ui/core';
 export default function GetItems() {
     const [currentPage, setCurrentPage] = React.useState(1);
     const [item, setItem] = React.useState([])
-    const postsPerPage = 30
+    const postsPerPage = 32
 
     const [loading, setLoading] = React.useState(true);
 
