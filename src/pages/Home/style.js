@@ -36,6 +36,22 @@ export const SectionTitle = styled.div`
         padding: 10px;
         text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.2);
     }
+
+    @media(max-width:850px){
+        padding: 10px;
+        top:40px;
+        position: relative;
+
+        h1{
+            font-size: 2.5rem;
+        }
+        p{
+            font-size: 1.1rem;
+        }
+    }
+
+
+
 `
 
 export const SectionImage = styled.div`

@@ -6,10 +6,12 @@ export const MainList = styled.div`
     align-items: center;
     max-width: 1320px;
     margin: 0 auto;
+    
 `
 export const ContainerList = styled.div`
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
+   
 
    @media (max-width:900px){
         grid-template-columns: 1fr 1fr;
@@ -26,7 +28,7 @@ export const ListaValores = styled.ul`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     width: 250px;
     height: 180px;
     margin: 20px;
@@ -39,6 +41,7 @@ export const ListaValores = styled.ul`
     li{
         margin: 2px;
         padding: 2px;
+      
     }
 
     @media (max-width:900px){

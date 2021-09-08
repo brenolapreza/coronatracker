@@ -9,20 +9,24 @@ export default function Pagination({ postsPerPage, totalPosts, paginate }){
     }
     
     const [click, setClick] = React.useState(null)
+    
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      };
 
     return(
         <NavPagination>
             <UlPagination>
                 {pageNumbers.map((item, index) => (
-                    <ButtonListed 
-                    key={index} 
-                    onClick={() => paginate(item)} 
-                    click={click} href="/listar/#" 
-                    className={click === index ? "btn-sucess" : null}>
-                        <DivButtonList 
-                        onClick={() => setClick(index)}>
-                            {item}
-                        </DivButtonList>
+                    <ButtonListed key={index} onClick={() =>{
+                        paginate(item)
+                        scrollToTop()
+                        setClick(index)
+                    }} href="#" >
+                        <DivButtonList className={click === index ? 'btn-sucess' : null}>{item}</DivButtonList>
                     </ButtonListed>
                 ))}
             </UlPagination>

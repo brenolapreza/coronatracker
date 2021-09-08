@@ -1,6 +1,7 @@
 import React from 'react';
 import Items from './items'
-import ApiVacina from '../../api/apiVacina'
+import Api from '../../api/api'
+import Pagination from './pagination'
 
 /* IMPORT COMPONENT STYLE */
 import {CirularWrapper} from './style'
@@ -9,33 +10,34 @@ import {CirularWrapper} from './style'
 import { CircularProgress } from '@material-ui/core';
 
 
-export default function GetItemsVacina() {
-    // const [currentPage, setCurrentPage] = React.useState(1);
-    const [item, setItem] = React.useState()
-    // const postsPerPage = 30
+export default function GetItems() {
+    const [currentPage, setCurrentPage] = React.useState(1);
+    const [item, setItem] = React.useState([])
+    const postsPerPage = 32
 
     const [loading, setLoading] = React.useState(true);
 
-    /* HOOK DE EFEITO NA FUNÇÃO DE CHAMADA A API */
-
-    React.useEffect(() => {
+    /* FUNÇÃO ASYNC PARA FETCH DOS DADOS UTILIZANDO O AXIOS */
+    async function fetchCountries() {
         setLoading(true)
-       async function fetchData(){
-            await ApiVacina.get().then(res => {
-                const item = res.data
-                 setItem(item)
-            })
-            setLoading(false)
-        }
-        fetchData();
+        await Api.get(`countries`).then(res => {
+            const item = res.data
+            setItem(item)
+        })
+        setLoading(false)
+    }
+
+    /* HOOK DE EFEITO NA FUNÇÃO DE CHAMADA A API */
+    React.useEffect(() => {
+        fetchCountries();
     }, [])
 
     /* VARIAVEIS PARA PAGINAÇÃO */
-    // const indexOfLastPost = currentPage * postsPerPage
-    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    // const currentPosts = item.slice(indexOfFirstPost, indexOfLastPost);
+    const indexOfLastPost = currentPage * postsPerPage
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = item.slice(indexOfFirstPost, indexOfLastPost);
 
-    // const paginate = (pageNumber) => setCurrentPage(pageNumber)
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     return (
         <>
@@ -48,8 +50,8 @@ export default function GetItemsVacina() {
             }
             { /* COMPONENTE DE ITEMS E PAGINAÇÃO */}
 
-            {item && <Items item={item}/>}
-            {/* <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} /> */}
+            <Items item={currentPosts} />
+            <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} />
 
         </>
     )

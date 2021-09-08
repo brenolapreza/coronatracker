@@ -50,7 +50,7 @@ export default function GetItems() {
             }
             { /* COMPONENTE DE ITEMS E PAGINAÇÃO */}
 
-            <Items item={currentPosts} />
+            <Items data={item} item={currentPosts} />
             <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} />
 
         </>

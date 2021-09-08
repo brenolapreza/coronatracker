@@ -2,14 +2,11 @@ import React from 'react'
 import Button  from "../../components/button";
 import Header from "../../components/Header";
 
-import {Section, SectionImage, SectionMain, SectionTitle} from './style'
-
+import {SectionImage, SectionMain, SectionTitle} from './style'
 import ImagemCovid from '../../styles/images/covid-image.svg'
 
 export default function Home(){
-
-     
-    return(
+      return(
         <>
             <Header/>
             <SectionMain>

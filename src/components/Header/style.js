@@ -59,17 +59,7 @@ export const HeaderStyle = styled.header`
 export const ListHeader = styled.ul`
     display: flex;
     padding-left: 20px;
-  
-
-    li {
-    list-style: none;
-    font-size: 18px;
-
-        a:hover{
-        background-color: var(--main-color);
-    }
-}
-
+    
     a {
         padding: 4px;
         margin: 4px;
@@ -101,8 +91,17 @@ export const ListHeader = styled.ul`
             margin: 2px 0;
         }
     }
+`
+export const Li = styled.li`
+    list-style: none;
+    font-size: 18px;
+        
+    a:hover{
+        background-color: var(--main-color);
+    }
 
 `
+
 export const ButtonHamburger = styled.div`
     width: 2rem;
     height: 2rem;

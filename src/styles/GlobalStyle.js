@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
+
 const GlobalStyle = createGlobalStyle`
  * {
    padding: 0; margin: 0; box-sizing: border-box;
@@ -14,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     --main-text-color: #0E002B;
     --new-black: #26262C;
     --main-color-hover: #4aad72;
+
+    --width-medium: max-width: 450px;
+    --width-large: 900px
+    --width-extra-large:1200px
 }
 body {
     font-family: 'Roboto Mono', monospace;

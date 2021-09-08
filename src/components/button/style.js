@@ -14,5 +14,10 @@ const ButtonStyle = styled.a`
     &:hover{
         background: var(--main-color-hover);
     }
+
+    @media(max-width:850px){
+        padding: 5px 10px;
+        font-size: 17px;
+    }
 `
 export default ButtonStyle
