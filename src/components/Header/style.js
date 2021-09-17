@@ -5,7 +5,8 @@ export const HeaderMain = styled.div`
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
     z-index: 999;
     backdrop-filter: blur(5px);
-    position: relative; 
+    position: relative;
+    text-transform:uppercase;
 `
 
 export const HeaderStyle = styled.header`

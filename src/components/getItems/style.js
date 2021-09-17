@@ -56,6 +56,7 @@ export const ListaValores = styled.ul`
     }
 
 `
+
 export const CirularWrapper = styled.div`
     display: flex;
     width: 100%;
@@ -63,4 +64,22 @@ export const CirularWrapper = styled.div`
     justify-content: center;
 `
 
+export const InputSearch = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
 
+    label {
+        color: var(--new-black);
+    }
+    
+    .MuiFormLabel-root.Mui-focused {
+        color:(--main-color);    
+    }
+
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color:var(--main-color);
+    }
+
+`

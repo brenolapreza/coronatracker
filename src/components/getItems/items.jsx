@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MainList, ContainerList, ListaValores } from './style'
+import { MainList, ContainerList, ListaValores, InputSearch } from './style'
 
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -17,21 +17,23 @@ export default function Items({ item, data }) {
             setFind(undefined)
         }
     }
-  
+
     return (
         <>
-            
-            <Autocomplete
-                id="combo-box-demo"
-                options={item}
-                getOptionLabel={(option) => option.country}
-                style={{ width: 300 }}
-                onChange={(event, newValue) => {
-                    console.log(event)
-                    setFind(newValue);
-                  }}
-               renderInput={(item) => <TextField {...item} label="Combo box" onChange={handleText} variant="outlined" />}
-            />
+            <InputSearch>
+                <Autocomplete
+                    id="combo-box-demo"
+                    options={item}
+                    getOptionLabel={(option) => option.country}
+                    style={{ width: 400 }}
+                    onChange={(event, newValue) => {
+                        console.log(event)
+                        setFind(newValue);
+                    }}
+                    renderInput={(item) => <TextField {...item} label="Combo box" onChange={handleText} variant="outlined" />}
+                />
+            </InputSearch>
+
             <MainList>
                 <ContainerList>
                     {find === undefined ? (
@@ -39,20 +41,26 @@ export default function Items({ item, data }) {
                             return (
                                 <ListaValores key={index}>
                                     <li><h3>{valor.country}</h3></li>
-                                    <li>Casos: {valor.cases}</li>
-                                    <li>Casos hoje: {valor.todayCases}</li>
-                                    <li>Mortes: {valor.deaths}</li>
-                                    <li>Recuperados: {valor.active}</li>
+                                    <li>Casos: {valor.cases.toLocaleString('pt-BR')}</li>
+                                    <li>Casos hoje: {valor.todayCases.toLocaleString('pt-BR')}</li>
+                                    <li>Mortes: {valor.deaths.toLocaleString('pt-BR')}</li>
+                                    <li>Recuperados: {Number(valor.active).toLocaleString('pt-BR')}</li>
                                 </ListaValores>
                             )
                         })
                     ) : (
                         <ListaValores>
-                            <li><h3>{find.country}</h3></li>
-                            <li>Casos: {find.cases}</li>
-                            <li>Casos hoje: {find.todayCases}</li>
-                            <li>Mortes: {find.deaths}</li>
-                            <li>Recuperados: {find.active}</li>
+                            {find !== null ? (
+                                <>
+                                    <li><h3>{find.country}</h3></li>
+                                    <li>Casos: {find.cases.toLocaleString('pt-BR')}</li>
+                                    <li>Casos hoje: {find.todayCases.toLocaleString('pt-BR')}</li>
+                                    <li>Mortes: {find.deaths.toLocaleString('pt-BR')}</li>
+                                    <li>Recuperados: {Number(find.active).toLocaleString('pt-BR')}</li>
+                                </>
+                            ) : (
+                                setFind(undefined)
+                            )}
                         </ListaValores>
                     )}
                 </ContainerList>
