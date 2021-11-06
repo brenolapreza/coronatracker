@@ -1,41 +1,13 @@
 import React from 'react';
 
-import { MainList, ContainerList, ListaValores, InputSearch } from './style'
+import { MainList, ContainerList, ListaValores } from './style'
 
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-
-export default function Items({ item, data }) {
-    const [find, setFind] = React.useState(item[0]);
-
-    function handleText(e) {
-        const proc = data.find(a => a.country === e.target.value);
-        console.log(item[0].country.length)
-        if (proc) {
-            setFind(proc);
-        } else {
-            setFind(undefined)
-        }
-    }
-
+export default function Items({ item, data, find, setFind }) {
+    
     return (
         <>
-            <InputSearch>
-                <Autocomplete
-                    id="combo-box-demo"
-                    options={item}
-                    getOptionLabel={(option) => option.country}
-                    style={{ width: 400 }}
-                    onChange={(event, newValue) => {
-                        console.log(event)
-                        setFind(newValue);
-                    }}
-                    renderInput={(item) => <TextField {...item} label="Combo box" onChange={handleText} variant="outlined" />}
-                />
-            </InputSearch>
-
             <MainList>
-                <ContainerList>
+            <ContainerList>
                     {find === undefined ? (
                         item.map((valor, index) => {
                             return (

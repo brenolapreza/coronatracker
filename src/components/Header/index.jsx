@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CoronaLogo from '../../styles/images/corona-icon1.png'
 import { HeaderStyle, ListHeader, ButtonHamburger, HeaderMain, Li } from './style';
 import { useHistory } from "react-router-dom";

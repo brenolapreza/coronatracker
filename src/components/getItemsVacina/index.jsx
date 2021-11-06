@@ -1,22 +1,21 @@
 import React from 'react';
-import ApiVacina from '../../api/apiVacina'
 import Items from './items'
 
 /* IMPORT COMPONENT STYLE */
-import { CirularWrapper } from './style'
-import { CircularProgress } from '@material-ui/core';
+// import { CirularWrapper } from './style'
 import axios from 'axios';
+import { CircularProgress } from '@material-ui/core';
 
 export default function GetItemsVacina() {
     const [item, setItem] = React.useState()
     const [itemAll, setItemAll] = React.useState()
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
 
 
     /* HOOK DE EFEITO NA FUNÇÃO DE CHAMADA A API */
     React.useEffect(() => {
-        setLoading(true)
         async function fetchData() {
+            setLoading(true)
             await axios.get('https://covid-api.mmediagroup.fr/v1/vaccines?country=Brazil').then(res => {
                 const item = res.data
                 setItem(item)
@@ -33,7 +32,8 @@ export default function GetItemsVacina() {
     
 
     return (
-        <>
+        <>  
+            {loading && <CircularProgress/>}
             {item, itemAll && <Items item={item} itemAll={itemAll} />}
         </>
     )
