@@ -69,11 +69,9 @@ export default function GetItems() {
         </CirularWrapper>
       )}
 
-      <input type="text" />
-
       {/* COMPONENTE DE ITEMS E PAGINAÇÃO */}
 
-  
+      <InputSearch>
         <Autocomplete
           id="combo-box-demo"
           options={item}
@@ -86,15 +84,15 @@ export default function GetItems() {
           renderInput={(item) => (
             <TextField
               {...item}
-              label="Combo box"
+              label="Pesquisar..."
               onChange={handleText}
               variant="outlined"
             />
           )}
         />
+      </InputSearch>
 
-
-       <Items data={item} item={currentPosts} find={find} setFind={setFind}/>
+      <Items data={item} item={currentPosts} find={find} setFind={setFind} />
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={item.length}

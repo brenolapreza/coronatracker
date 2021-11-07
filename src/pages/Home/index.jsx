@@ -13,7 +13,7 @@ export default function Home(){
                 <SectionTitle>
                     <h1>COVID-19</h1>
                     <p>Números de infectados e total de vacinados no Brasil e no mundo</p>
-                    <Button text="QUERO SABER MAIS" />
+                    <Button link="/listar" text="QUERO SABER MAIS" />
                 </SectionTitle>
                 <SectionImage>
                     <img src={ImagemCovid} alt="Imagem sobre o COVID-19" />

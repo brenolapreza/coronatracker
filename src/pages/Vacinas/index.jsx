@@ -6,7 +6,6 @@ export default function Vacinas(){
     return(
        <>
          <Header/>
-         <h1>Todos</h1>
          <GetItemsVacina/>
        </>
     )

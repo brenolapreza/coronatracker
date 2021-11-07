@@ -18,13 +18,17 @@ export const ContainerList = styled.div`
     padding: 20px;
     margin-top: 10px;
     font-size: 23px;
+    max-width: 890px;
 `
 export const ContainerInfo = styled.div`
-    background: var(--main-color-hover);
     display: inline-block;
+    background-color: #c3d7c8;
     padding: 4px;
     font-size: 26px;
     font-weight: bold;
     border: 2px solid #387c4a;
     border-radius: 3px;
+    margin-top: 10px;
+    min-width: 220px;
+    text-align: center;
 `
