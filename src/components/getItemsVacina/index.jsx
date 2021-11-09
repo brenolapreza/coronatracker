@@ -33,7 +33,9 @@ export default function GetItemsVacina() {
 
     return (
         <>  
-            {loading && <CircularProgress/>}
+            <center>
+                {loading && <CircularProgress color="primary" thickness={6} size={50}/>}
+            </center>
             {item, itemAll && <Items item={item} itemAll={itemAll} />}
         </>
     )

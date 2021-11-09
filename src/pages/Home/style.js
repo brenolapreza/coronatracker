@@ -27,12 +27,12 @@ export const SectionTitle = styled.div`
     text-align: center;
    
     h1{
-        font-size: 4rem;
-        text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.63);
+        font-size: 3.2rem;
+        text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.397);
         font-weight: bold;
     }
     p{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         padding: 10px;
         text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.2);
     }
@@ -55,12 +55,14 @@ export const SectionTitle = styled.div`
 `
 
 export const SectionImage = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding-top: 20px;
+    display: flex;
+    justify-content: center;
 
     img {
-        max-width: 90%;
+        max-width: 600px;
+        position:absolute;
+        bottom: 0;
+        z-index: 0;
     }
 `

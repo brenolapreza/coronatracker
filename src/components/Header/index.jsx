@@ -24,11 +24,7 @@ export default function Header() {
         {
             name: 'vacina',
             link: '/vacinas'
-        },
-        {
-            name: 'sobre o covid',
-            link: '/about'
-        },
+        }
     ]
 
     return (
